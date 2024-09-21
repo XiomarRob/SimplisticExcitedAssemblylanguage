@@ -2,37 +2,37 @@ using System;
 
 class Program {
   public static void Main (string[] args) {
-    Console.WriteLine ("Enter wind speed in mph: ");
+    Console.WriteLine ("Enter wind speed in mph:");
 
-    double windMph;
-    bool isMphValid = double.TryParse(Console.ReadLine(), out windMph);
+    double windInMph;
+    bool isMphValid = double.TryParse(Console.ReadLine(), out windInMph);
 
-    if (isMphValid)
+    if (!isMphValid)
     {
       Console.WriteLine("Incorrect input. Enter a valid number");
       return;
       }
-    if (windMph >= 157)
+    if (windInMph >= 157)
     {
       Console.WriteLine("Category Five Hurricane");
     }
-    if (windMph >= 130)
+    else if (windInMph >= 130)
     {
       Console.WriteLine("Category Four Hurricane");
     }
-    if (windMph >= 111)
+    else if (windInMph >= 111)
     {
       Console.WriteLine("Category Three Hurricane");
     }
-    if (windMph >= 96)
+    else if (windInMph >= 96)
     {
       Console.WriteLine("Category Two Hurricane");
     }
-    if (windMph >= 74)
+    else if (windInMph >= 74)
     {
       Console.WriteLine("Category One Hurricane");
     }
-    else if (windMph < 74)
+    else
     {
       Console.WriteLine("Not a hurricane");
     }
